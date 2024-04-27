@@ -25,15 +25,15 @@ def make_nft(data: dict):
     hex_code = data["hex_code"]
     variant = data["variant"]
 
-    rgb = tuple(int(hex_code[i:i+2], 16) for i in (0, 2, 4))
-    
+    rgb = tuple(int(hex_code[i : i + 2], 16) for i in (0, 2, 4))
+
     img = Image.new("RGBA", (500, 500), rgb)
-    
-    variant_img = Image.open(f"src/assets/nft/{variant}.png").convert('RGBA')
+
+    variant_img = Image.open(f"src/assets/nft/{variant}.png").convert("RGBA")
     img.paste(variant_img, (0, 0), variant_img)
-    
+
     bio = BytesIO()
     img.save(bio, "PNG")
     bio.seek(0)
-    
+
     return bio
