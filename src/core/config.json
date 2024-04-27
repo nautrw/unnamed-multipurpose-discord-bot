@@ -1,0 +1,5 @@
+{
+    "token": "BOT TOKEN HERE",
+    "test_guilds": ["IDS HERE"],
+    "exts": ["src.exts.developer"]
+}
