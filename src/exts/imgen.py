@@ -13,7 +13,6 @@ class Imgen(commands.Cog):
     @commands.slash_command()
     async def nft(self, inter: disnake.ApplicationCommandInteraction):
         """Generates an unique NFT image just for you <3"""
-        # await inter.response.defer()
 
         data = nft.generate_nft_data(inter.user.id)
         bio = nft.make_nft(data)
